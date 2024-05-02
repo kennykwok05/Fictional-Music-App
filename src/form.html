@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en-CA">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=500, initial-scale=1" />
+    <title>Request New Artist</title>
+    <link rel="stylesheet" href="./css/water.css" />
+    <style>
+      body {
+        font-family: Arial;
+      }
+
+      .container {
+        border-radius: 0.25em;
+        background-color: #3d3e46;
+        padding: 1.5em;
+        max-width: 50vw;
+        margin: 0 auto;
+        box-shadow: 0 0 10px rgba(211, 206, 199, 0.8);
+      }
+
+      button[type="button"],
+      input[type="submit"] {
+        width: 100%;
+        background-color: rgb(12, 83, 83);
+        margin-top: 0.5em;
+      }
+
+      button[type="button"]:hover,
+      input[type="submit"]:hover {
+        box-shadow: 0 0 10px rgb(255, 255, 255);
+        background-color: rgb(12, 83, 83);
+      }
+
+      .home-container button {
+        background-color: rgb(12, 83, 83);
+        width: 100%;
+      }
+
+      .home-container button:hover {
+        box-shadow: 0 0 10px rgb(255, 255, 255);
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      input[type="url"],
+      input[type="text"] {
+        width: 100%;
+        padding: 0.5em;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        box-sizing: border-box;
+      }
+
+      .boldtext {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="center boldtext">Request New Artist</h1>
+
+    <div class="container">
+      <form id="form" action="https://httpbin.org/post" method="post">
+        <label for="name" class="boldtext">Artist's Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter artist" required />
+
+        <label for="genre" class="boldtext">Music Genre</label>
+        <input
+          type="text"
+          id="genre"
+          name="genre"
+          list="genres"
+          placeholder="Select or type a genre"
+          required
+        />
+        <datalist id="genres">
+          <option value="Pop"></option>
+          <option value="Country"></option>
+          <option value="Jazz"></option>
+          <option value="R&B"></option>
+          <option value="EDM"></option>
+          <option value="Rock"></option>
+          <option value="K-Pop"></option>
+          <option value="Hip Hop"></option>
+          <option value="Classical"></option>
+          <option value="J-Pop"></option>
+        </datalist>
+
+        <label for="socialMedia" class="boldtext">Social Media URLs</label>
+        <textarea
+          id="socialMedia"
+          name="socialMedia"
+          placeholder="Enter URLs, one per line"
+          rows="4"
+          required
+        ></textarea>
+
+        <label for="songExamples" class="boldtext">Songs/Videos URLs</label>
+        <div id="songExamplesContainer">
+          <input
+            type="url"
+            id="songExamples"
+            name="songExamples"
+            placeholder="Enter URL"
+            required
+          />
+        </div>
+        <button type="button" id="addSongExamples">Add another URL</button>
+
+        <label for="explicit" class="boldtext">Contains explicit lyrics? </label>
+        <input type="checkbox" id="explicit" name="explicit" />
+
+        <br />
+
+        <label for="reason" class="boldtext">Reason for adding this artist</label>
+        <textarea id="reason" name="reason" rows="4" required></textarea>
+
+        <input type="submit" value="Submit" />
+
+        <div class="home-container">
+          <button onclick="window.location.href = 'index.html';">Back to home page</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      document.getElementById("addSongExamples").addEventListener("click", function () {
+        var container = document.getElementById("songExamplesContainer");
+        var input = document.createElement("input");
+        input.type = "url";
+        input.name = "songExamples";
+        input.placeholder = "Enter URL";
+        input.required = true;
+        input.style.marginBottom = "0.5em";
+        container.appendChild(input);
+      });
+    </script>
+  </body>
+</html>

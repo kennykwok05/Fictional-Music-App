@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en-CA">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=500, initial-scale=1" />
+
+    <!-- Change this to your name-->
+    <meta name="author" content="Kenny Kwok" />
+
+    <title>WEB222 Music App</title>
+    <!-- Classless CSS Stylesheet - https://watercss.kognise.dev/ -->
+    <link rel="stylesheet" href="./css/water.css" />
+    <style>
+      #container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 20px;
+        margin: 0 auto;
+      }
+
+      .card {
+        width: 250px;
+        height: 325px;
+        margin-bottom: 20px;
+        background-color: #172130;
+        border-radius: 10px;
+      }
+
+      .card:hover {
+        transform: scale(1.04);
+      }
+
+      .card-image {
+        width: 210px;
+        height: 210px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      .songName {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        margin-left: 20px;
+      }
+
+      .yearRecorded {
+        margin-left: 18px;
+        font-size: 15px;
+      }
+
+      .duration {
+        font-size: 15px;
+        margin-left: 140px;
+      }
+
+      .request-artist-container button {
+        width: 100%;
+        background-color: #3d3e46;
+      }
+
+      .request-artist-container button:hover {
+        box-shadow: 0 0 10px rgb(255, 255, 255);
+      }
+
+      .footer-container {
+        background-color: #172130;
+        padding: 20px;
+        text-align: center;
+        border-radius: 0.5em;
+      }
+
+      .footer-container h2 {
+        margin-top: 1px;
+      }
+
+      .footer-container input[type="email"] {
+        width: 250px;
+        padding: 10px;
+        margin-left: 180px;
+        float: left;
+      }
+
+      .footer-container button[type="submit"] {
+        background-color: rgba(239, 143, 9, 0.704);
+        margin-right: 170px;
+      }
+
+      .footer-container button:hover {
+        box-shadow: 0 0 10px rgb(255, 255, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- Change this to your App's info -->
+      <h1>K-PopVibes</h1>
+      <p>Discover the Beat of Seoul!</p>
+    </header>
+
+    <nav id="menu">
+      <!-- Dynamically create your menu category buttons here -->
+    </nav>
+
+    <hr />
+
+    <main>
+      <h2 id="selected-artist">
+        <!-- Dynamically update the selected category title -->
+      </h2>
+      <div id="container">
+        <!-- Dynamically update the song cards -->
+      </div>
+    </main>
+
+    <!-- JavaScript Data Files -->
+    <script src="./js/artists.js"></script>
+    <script src="./js/songs.js"></script>
+
+    <!-- Main App JavaScript File -->
+    <script src="./js/app.js"></script>
+  </body>
+  <footer>
+    <div class="footer-container">
+      <div class="request-artist-container">
+        <button onclick="window.location.href = 'form.html';">Request a New Artist</button>
+      </div>
+      <h2>Sign up for our newsletter</h2>
+      <form id="newsLetter" action="https://httpbin.org/post" method="post">
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          style=""
+          required
+        />
+        <button type="submit" style="">Subscribe</button>
+      </form>
+      <p>No spam, we hate it more than you do.</p>
+    </div>
+  </footer>
+</html>
