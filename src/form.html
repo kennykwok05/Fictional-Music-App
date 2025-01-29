@@ -6,10 +6,11 @@
     <title>Request New Artist</title>
     <link rel="stylesheet" href="./css/water.css" />
     <style>
+      /* Basic body styles */
       body {
         font-family: Arial;
       }
-
+      /* Container for the form elements with specific styles */
       .container {
         border-radius: 0.25em;
         background-color: #3d3e46;
@@ -18,33 +19,33 @@
         margin: 0 auto;
         box-shadow: 0 0 10px rgba(211, 206, 199, 0.8);
       }
-
+      /* Style for buttons and submit inputs */
       button[type="button"],
       input[type="submit"] {
         width: 100%;
         background-color: rgb(12, 83, 83);
         margin-top: 0.5em;
       }
-
+      /* Hover effect for buttons */
       button[type="button"]:hover,
       input[type="submit"]:hover {
         box-shadow: 0 0 10px rgb(255, 255, 255);
         background-color: rgb(12, 83, 83);
       }
-
+      /* Styling for the home page button */
       .home-container button {
         background-color: rgb(12, 83, 83);
         width: 100%;
       }
-
+      /* Hover effect for the home button */
       .home-container button:hover {
         box-shadow: 0 0 10px rgb(255, 255, 255);
       }
-
+      /* Center-aligns the text */
       .center {
         text-align: center;
       }
-
+      /* Input fields for text and URL */
       input[type="url"],
       input[type="text"] {
         width: 100%;
@@ -53,7 +54,7 @@
         margin-bottom: 0.5em;
         box-sizing: border-box;
       }
-
+      /* Bold text class for labels */
       .boldtext {
         font-weight: bold;
       }
@@ -61,12 +62,13 @@
   </head>
   <body>
     <h1 class="center boldtext">Request New Artist</h1>
-
+    <!-- Container for the form -->
     <div class="container">
       <form id="form" action="https://httpbin.org/post" method="post">
+        <!-- Artist Name Input Field -->
         <label for="name" class="boldtext">Artist's Name</label>
         <input type="text" id="name" name="name" placeholder="Enter artist" required />
-
+        <!-- Music Genre Input Field with a datalist for options -->
         <label for="genre" class="boldtext">Music Genre</label>
         <input
           type="text"
@@ -88,7 +90,7 @@
           <option value="Classical"></option>
           <option value="J-Pop"></option>
         </datalist>
-
+        <!-- Social Media URLs Input Field -->
         <label for="socialMedia" class="boldtext">Social Media URLs</label>
         <textarea
           id="socialMedia"
@@ -97,7 +99,7 @@
           rows="4"
           required
         ></textarea>
-
+        <!-- Songs/Videos URL Input with a button to add more URLs -->
         <label for="songExamples" class="boldtext">Songs/Videos URLs</label>
         <div id="songExamplesContainer">
           <input
@@ -108,24 +110,25 @@
             required
           />
         </div>
+        <!-- Button to add another URL input field -->
         <button type="button" id="addSongExamples">Add another URL</button>
-
+        <!-- Checkbox to indicate if the artist contains explicit lyrics -->
         <label for="explicit" class="boldtext">Contains explicit lyrics? </label>
         <input type="checkbox" id="explicit" name="explicit" />
 
         <br />
-
+        <!-- Reason for adding the artist -->
         <label for="reason" class="boldtext">Reason for adding this artist</label>
         <textarea id="reason" name="reason" rows="4" required></textarea>
-
+        <!-- Submit Button -->
         <input type="submit" value="Submit" />
-
+        <!-- Button to navigate back to the home page -->
         <div class="home-container">
           <button onclick="window.location.href = 'index.html';">Back to home page</button>
         </div>
       </form>
     </div>
-
+    <!-- JavaScript to handle adding more song URLs -->
     <script>
       document.getElementById("addSongExamples").addEventListener("click", function () {
         var container = document.getElementById("songExamplesContainer");
@@ -135,7 +138,7 @@
         input.placeholder = "Enter URL";
         input.required = true;
         input.style.marginBottom = "0.5em";
-        container.appendChild(input);
+        container.appendChild(input); // Appends the new input field to the container
       });
     </script>
   </body>

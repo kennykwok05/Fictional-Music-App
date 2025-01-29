@@ -4,13 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=500, initial-scale=1" />
 
-    <!-- Change this to your name-->
     <meta name="author" content="Kenny Kwok" />
 
-    <title>WEB222 Music App</title>
+    <title>Music App</title>
     <!-- Classless CSS Stylesheet - https://watercss.kognise.dev/ -->
     <link rel="stylesheet" href="./css/water.css" />
     <style>
+      /* Main container for song cards */
       #container {
         display: flex;
         flex-wrap: wrap;
@@ -19,7 +19,7 @@
         margin-top: 20px;
         margin: 0 auto;
       }
-
+      /* Styling for individual song cards */
       .card {
         width: 250px;
         height: 325px;
@@ -27,11 +27,11 @@
         background-color: #172130;
         border-radius: 10px;
       }
-
+      /* increase the size of the card when hovered */
       .card:hover {
         transform: scale(1.04);
       }
-
+      /* Song cover image inside the card */
       .card-image {
         width: 210px;
         height: 210px;
@@ -41,7 +41,7 @@
         margin-left: 20px;
         margin-right: 20px;
       }
-
+      /* Song title */
       .songName {
         font-size: 20px;
         font-weight: bold;
@@ -49,49 +49,49 @@
         margin-bottom: 5px;
         margin-left: 20px;
       }
-
+      /* Year the song was recorded */
       .yearRecorded {
         margin-left: 18px;
         font-size: 15px;
       }
-
+      /* Duration of the song */
       .duration {
         font-size: 15px;
         margin-left: 140px;
       }
-
+      /* Styling for the "Request a New Artist" button */
       .request-artist-container button {
         width: 100%;
         background-color: #3d3e46;
       }
-
+      /* Increase the size of the button when hovered */
       .request-artist-container button:hover {
         box-shadow: 0 0 10px rgb(255, 255, 255);
       }
-
+      /* Footer container for subscription form */
       .footer-container {
         background-color: #172130;
         padding: 20px;
         text-align: center;
         border-radius: 0.5em;
       }
-
+      /* Footer heading */
       .footer-container h2 {
         margin-top: 1px;
       }
-
+      /* Email input field in the newsletter form */
       .footer-container input[type="email"] {
         width: 250px;
         padding: 10px;
         margin-left: 180px;
         float: left;
       }
-
+      /* Subscribe button */
       .footer-container button[type="submit"] {
         background-color: rgba(239, 143, 9, 0.704);
         margin-right: 170px;
       }
-
+      /* Increase the size of the button when hovered */
       .footer-container button:hover {
         box-shadow: 0 0 10px rgb(255, 255, 255);
       }
@@ -99,13 +99,13 @@
   </head>
   <body>
     <header>
-      <!-- Change this to your App's info -->
+      <!-- App title and description -->
       <h1>K-PopVibes</h1>
       <p>Discover the Beat of Seoul!</p>
     </header>
 
     <nav id="menu">
-      <!-- Dynamically create your menu category buttons here -->
+      <!-- Dynamically created menu category buttons here -->
     </nav>
 
     <hr />
@@ -129,9 +129,11 @@
   <footer>
     <div class="footer-container">
       <div class="request-artist-container">
+         <!-- Button to navigate to artist request form -->
         <button onclick="window.location.href = 'form.html';">Request a New Artist</button>
       </div>
       <h2>Sign up for our newsletter</h2>
+      <!-- sends data to a specified URL using the POST method -->
       <form id="newsLetter" action="https://httpbin.org/post" method="post">
         <input
           type="email"
@@ -141,6 +143,7 @@
           style=""
           required
         />
+        <!-- Submit button for the form -->
         <button type="submit" style="">Subscribe</button>
       </form>
       <p>No spam, we hate it more than you do.</p>

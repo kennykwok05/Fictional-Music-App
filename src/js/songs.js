@@ -1,11 +1,5 @@
-/**
- * songs.js
- *
- * The app's songs
- */
-
+// List of Songs stored in an object
 window.songs = [
-  /* TODO */
   {
     songId: "SID-35002",
     artistId: "AID-25001",

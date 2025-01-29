@@ -1,11 +1,5 @@
-/**
- * artists.js
- *
- * The app's list of Artists
- */
-
+// List of Artists stored in an object
 window.artists = [
-  /* TODO */
   {
     artistId: "AID-25001",
     name: "TWICE",
